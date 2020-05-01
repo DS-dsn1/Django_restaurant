@@ -10,6 +10,9 @@ class Chef(models.Model):
     experience = models.CharField(max_length=250)
     salary = models.FloatField(max_length=50)
 
+    def __str__(self):
+        return f'Chef {self.id}: {self.first_name} {self.last_name}'
+
 
 class Dish(models.Model):
     name = models.CharField(max_length=250)
@@ -23,6 +26,9 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     phone = models.CharField(max_length=30)
+
+    def __str__(self):
+        return f'{self.id}: {self.first_name} {self.last_name}'
 
 
 class Orders(models.Model):

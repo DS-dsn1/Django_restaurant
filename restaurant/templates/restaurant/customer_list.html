@@ -1,0 +1,17 @@
+{% extends 'restaurant/base.html' %}
+
+{% block title %} Customers {% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+        <h1 class="display-4">Customers</h1>
+        <hr class="my-4">
+        <div/>
+    </div>
+    <div>
+      {% for customer in customers %}
+      <p> {{ customer }} </p>
+      {% endfor %}
+    </div>
+{% endblock content %}
