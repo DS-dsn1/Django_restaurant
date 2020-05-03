@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from restaurant import views
+from .router import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('chef', views.show_chef, name='chefs'),
     path('customer/', views.customer_list, name='customer_list'),
+    path('api/', include(router.urls), name='api'),
 ]
